@@ -34,4 +34,9 @@ export class UsersService {
     this.usersRepository.merge(user, updateUserDto);
     return await this.usersRepository.save(user);
   }
+
+  async remove(id: number): Promise<void> {
+    const user = await this.findOne(id);
+    await this.usersRepository.remove(user);
+  }
 }
