@@ -13,4 +13,7 @@ export class User {
 
   @Column()
   address: string;
+
+  @Column({ nullable: true })
+  password?: string;
 }
